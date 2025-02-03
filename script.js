@@ -25,10 +25,3 @@ function handleNoClick() {
 function handleYesClick() {
   window.location.href = "yes_page.html";
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("bg-music");
-  audio.play().catch(() => {
-    console.log("Autoplay blocked by browser. User interaction required.");
-  });
-});

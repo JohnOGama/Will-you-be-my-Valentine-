@@ -24,6 +24,20 @@
       <source src="./music.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
+    <script>
+      function playMusic() {
+        const audio = document.getElementById("bg-music");
+        audio.volume = 0.5; // Adjust volume if needed
+        audio.play().catch((err) => console.error("Autoplay failed:", err));
+      }
+
+      // Attempt autoplay immediately
+      document.addEventListener("DOMContentLoaded", playMusic);
+
+      // Force autoplay when user interacts (fixes most browser restrictions)
+      document.addEventListener("click", playMusic);
+      document.addEventListener("touchstart", playMusic);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
